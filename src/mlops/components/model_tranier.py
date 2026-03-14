@@ -97,7 +97,7 @@ class ModelTrainer:
                 } 
             }
         
-            model_report:dict=evaluate_models(X_train,y_train,X_test,y_test,models,params)
+            model_report, best_params_dict = evaluate_models(X_train,y_train,X_test,y_test,models,params)
 
             best_model_score = max(sorted(model_report.values()))
             best_model_name = list(model_report.keys())[
@@ -116,7 +116,8 @@ class ModelTrainer:
                 if best_model_name == model:
                     actual_model = actual_model + model
 
-            best_params = params[actual_model]
+            best_params = best_params_dict[best_model_name]
+            print("these are the best_params",best_params)
 
             mlflow.set_registry_uri("https://dagshub.com/Shubham-rawat0/mlops.mlflow")
             tracking_url_type_store = urlparse(mlflow.get_tracking_uri()).scheme
