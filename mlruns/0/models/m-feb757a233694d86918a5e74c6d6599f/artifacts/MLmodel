@@ -1,0 +1,23 @@
+artifact_path: file:///C:/Users/rawat/projects/mlops/mlruns/0/models/m-feb757a233694d86918a5e74c6d6599f/artifacts
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.pkl
+    predict_fn: predict
+    python_version: 3.11.15
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 1.4.2
+    skops_trusted_types: null
+mlflow_version: 3.10.1
+model_id: m-feb757a233694d86918a5e74c6d6599f
+model_size_bytes: 708
+model_uuid: m-feb757a233694d86918a5e74c6d6599f
+prompts: null
+run_id: ae0ead0a20084486a723931dca34e7bf
+utc_time_created: '2026-03-14 12:54:26.146878'
